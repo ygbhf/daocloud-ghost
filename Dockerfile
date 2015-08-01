@@ -41,8 +41,8 @@ RUN buildDeps=' \
 
 ENV GHOST_CONTENT /var/lib/ghost
 RUN mkdir -p "$GHOST_CONTENT" && chown -R user:user "$GHOST_CONTENT" "$GHOST_SOURCE"
-ADD lanyon /usr/src/ghost/content/themes/
-ADD silent /usr/src/ghost/content/themes/
+ADD lanyon /usr/src/ghost/content/themes/lanyon/
+ADD silent /usr/src/ghost/content/themes/silent/
 ADD config.js /var/lib/ghost/
 #VOLUME $GHOST_CONTENT
 
