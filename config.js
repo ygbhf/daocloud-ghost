@@ -11,7 +11,16 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: process.env.GHOST_ROOT_URL,
-        mail: {},
+        mail: {
+            transport: 'SMTP',
+            options: {
+                service: 'Mailgun',
+                auth: {
+                user: 'postmaster@sandbox0745f20b166744b5ab71b77b7cf7b8ff.mailgun.org',
+                pass: 'a28a3971e3efe00d117ef466cd039ebc'
+                },
+            },
+        },
         database: {
             client: 'mysql',
             connection: {

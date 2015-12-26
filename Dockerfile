@@ -21,7 +21,7 @@ ENV GHOST_SOURCE /usr/src/ghost
 ENV GHOST_ROOT_URL http://changetoyoururl.daoapp.io
 WORKDIR $GHOST_SOURCE
 
-ENV GHOST_VERSION 0.7.1
+ENV GHOST_VERSION 0.7.4
 
 RUN buildDeps=' \
 		gcc \
@@ -41,9 +41,7 @@ RUN buildDeps=' \
 
 ENV GHOST_CONTENT /var/lib/ghost
 RUN mkdir -p "$GHOST_CONTENT" && chown -R user:user "$GHOST_CONTENT" "$GHOST_SOURCE"
-ADD casper-cmz /usr/src/ghost/content/themes/casper-cmz/
-ADD lanyon /usr/src/ghost/content/themes/lanyon/
-ADD silent /usr/src/ghost/content/themes/silent/
+ADD anatole /usr/src/ghost/content/themes/anatole/
 ADD config.js /var/lib/ghost/
 #VOLUME $GHOST_CONTENT
 
